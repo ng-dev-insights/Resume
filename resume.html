@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        .resume-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            min-height: 100%;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #3498db;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            color: white;
+        }
+
+        .title {
+            color: #3498db;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e0e0e0;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #3498db;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .company {
+            color: #3498db;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+
+        .date {
+            color: #95a5a6;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .skill-item {
+            position: relative;
+        }
+
+        .skill-name {
+            margin-bottom: 5px;
+            color: #ecf0f1;
+        }
+
+        .skill-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: #3498db;
+            width: 0;
+            animation: fillBar 1s ease-out forwards;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: var(--level); }
+        }
+
+        .bullet-points {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .bullet-points li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .language-item {
+            margin-bottom: 10px;
+            color: #ecf0f1;
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">SB</div>
+                <h1 class="name">Sanket Daulat Bhor</h1>
+                <div class="title">Senior Angular Developer</div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title" style="color: white;">Contact</h2>
+                <div class="contact-info">
+                    <div class="contact-item">📱 +919561527671</div>
+                    <div class="contact-item">📍 C-19, Sagar Co.Op.Hsg.So, Sector-10, Koparkhairne, Navi Mumbai, 400709</div>
+                    <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/sanket-bhor" style="color: white;">linkedin.com/in/sanket-bhor</a></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title" style="color: white;">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-name">Angular</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">HTML5, CSS3, SCSS</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Angular Material, Bootstrap</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">RxJS, TypeScript</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">NgRx, Redux</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Jasmine, Karma</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Jest, Protractor</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Git Version Control</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Node.js</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">MySql, MongoDB</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">CI/CD Pipelines (GitHub Actions, Jenkins)</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Figma, Postman</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Docker, Kubernetes</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 40%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title" style="color: white;">Languages</h2>
+                <div class="language-item">Marathi (Native)</div>
+                <div class="language-item">English (Professional)</div>
+                <div class="language-item">Hindi (Professional)</div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title" style="color: white;">Hobbies</h2>
+                <ul class="bullet-points">
+                    <li style="color: white;">Reading technology blogs to stay updated on industry trends and emerging frameworks</li>
+                    <li style="color: white;">Exploring and experimenting with new programming tools and frameworks</li>
+                    <li style="color: white;"> Maintaining a fitness regime through yoga and outdoor activities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p style="text-align: justify;">Results-oriented Senior Angular Developer with 7+ years of experience creating scalable, high-performance web applications using Angular, RxJS, and NgRx. Specialized in responsive design, state management, and user-centric UI/UX development. Recognized for delivering innovative solutions, mentoring team members, and driving efficient development processes. Demonstrated expertise in full software development lifecycle (SDLC) management and a passion for solving complex challenges. Currently pursuing an MS in Computer Engineering to deepen expertise and stay ahead of emerging technologies.</p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Key Achievements</h2>
+                <ul class="bullet-points">
+                    <li>  Delivered web application performance improvements by optimizing Angular code and implementing best practices.</li>
+                    <li>Developed more than 15+ large-scale projects, ensuring robust functionality and high scalability to meet complex business requirements.</li>
+                    <li>  Won back-to-back hackathons (2018 &amp;amp; 2019) at 63 Moons Technologies by developing innovative solutions for fintech challenges.</li>
+                    <li>Ranked 1st in Oracle Database Module during Post Graduate Diploma at CDAC.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-item">
+                    <h3 class="job-title">Senior Angular Developer</h3>
+                    <div class="company">Ten Lifestyle Group</div>
+                    <div class="date">August 2021 - Present</div>
+                    <ul class="bullet-points">
+                        <li>Built dynamic, user-centric web applications leveraging Angular (16+), RxJS, NgRx, and Angular Material.</li>
+                        <li>Developed responsive applications based on wireframes, ensuring compatibility across devices and browsers, and occasionally updating wireframes for improved user experience.
+                        </li>
+                        <li>Independently or with a group of 2 people, developed multiple modules contributing to:
+                            <ul class="bullet-points">
+                                <li>TenMaid: A CRM tool streamlining knowledge management, with advanced search and workload monitoring features.</li>
+                                <li>TenPlatform: A global booking platform integrating APIs for dining, hotels, events, and flights, ensuring accuracy and efficiency through rigorous API testing and validation.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>  Wrote test cases for various scenarios to ensure robust application functionality.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3 class="job-title">Angular Developer</h3>
+                    <div class="company">63Moons Technologies Private Limited</div>
+                    <div class="date">August 2018 - August 2021</div>
+
+                    <ul class="bullet-points">
+                        <li>Delivered responsive web applications using Angular (2.0–9.0)</li>
+                        <li>Designed reusable Angular components, streamlining development workflows.</li>
+                        <li>Developed and integrated scalable backend APIs with Node.js, ensuring secure and efficient data handling.</li>
+                        <li>Developed multiple projects from scratch, ensuring robust architecture and seamless user experience.</li>
+                        <li>Collaborated closely with cross-functional teams, ensuring alignment on project goals and technical requirements.
+                        </li>
+                        <li>Conducted user testing and feedback sessions, iterating on designs to enhance usability and functionality.</li>
+                    </ul>
+                </div>  
+
+                <div class="experience-item">
+                    <h3 class="job-title">Software Engineer</h3>
+                    <div class="company">WhiteCrow Research</div>
+                    <div class="date">January 2018 - August 2018</div>
+                    <ul class="bullet-points">
+                        <li>Designed and implemented multi-domain web applications compatible with leading browsers</li>
+                        <li> Collaborated with backend teams to design and integrate secure APIs, enabling efficient communication between services and the Angular frontend.</li>
+                        <li>Developed a project from scratch, delivering tailored solutions to meet client requirements.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3 class="job-title">Junior Software Engineer</h3>
+                    <div class="company">Emqube Consulting</div>
+                    <div class="date">August 2016 – August 2017</div>
+                    <ul class="bullet-points">
+                        <li>Delivered AngularJS and .Net web applications tailored to diverse client needs.</li>
+                        <li> Conducted code reviews and maintained coding standards across projects.</li>
+                        <li>  Implemented client feedback efficiently, ensuring high levels of satisfaction and repeat business.</li>
+                        <li>Participated in system design discussions, contributing to innovative solutions for complex challenges.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="experience-item">
+                    <h3 class="job-title">MS - Computer Engineering</h3>
+                    <div class="company">D Y Patil University, Mumbai</div>
+                    <div class="date">July 2023 - Present</div>
+                </div>
+                <div class="experience-item">
+                    <h3 class="job-title">Post Graduate Diploma in Advanced Computing (PG-DAC)</h3>
+                    <div class="company">CDAC, Mumbai</div>
+                    <div class="date">February 2016 - August 2016</div>
+                </div>
+                <div class="experience-item">
+                    <h3 class="job-title">BE - Computer Engineering</h3>
+                    <div class="company">Samarth Group of Institutions, Pune</div>
+                    <div class="date">June 2011 - June 2015</div>
+                </div>
+                <div class="experience-item">
+                    <h3 class="job-title">Diploma in Information Technology</h3>
+                    <div class="company">Terna College Of Engineering, Mumbai</div>
+                    <div class="date">June 2007 - June 2011</div>
+                </div>
+                <div class="experience-item">
+                    <h3 class="job-title">Secondary School Certificate</h3>
+                    <div class="company"> R.F.Naik School, Mumbai</div>
+                    <div class="date">June 2006 – June 2007</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Courses</h2>
+                <ul class="bullet-points">
+                    <li>Cyber Security And Privacy, NPTEL (June 2024 – January 2025)</li>
+                    <li>Cyber Crime Administration, NPTEL (June 2024 – January 2025)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Achievements</h2>
+                <ul class="bullet-points">
+                    <li>Hackathon Winner, 63 Moons Technologies (March 2018, March 2019)</li>
+                    <li>Awarded Best Performer (Q2-FY20) for exceptional contributions</li>
+                    <li>Developed and optimized web applications with Angular best practices</li>
+                </ul>
+            </div>
+
+        
+        </div>
+    </div>
+</body>
+</html>
